@@ -21,7 +21,7 @@ export const sessions = sqliteTable('sessions', {
 })
 
 export const sessionsRelation = relations(sessions, ({ one }) => ({
-  sessions: one(users, {
+  user: one(users, {
     fields: [sessions.userId],
     references: [users.id],
   }),
